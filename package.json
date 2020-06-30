@@ -1,5 +1,5 @@
 {
-  "name": "shortly-express",
+  "name": "couresfornode",
   "version": "1.1.0",
   "description": "Learn about authentication by building a link shortener",
   "author": "Hack Reactor <curriculum.team@hackreactor.com>",
@@ -9,16 +9,16 @@
     "node": ">=4.0.0"
   },
   "scripts": {
-    "postinstall": "curl -s https://raw.githubusercontent.com/reactorcore/pomander/master/bin/install | bash && ./node_modules/.bin/jsdoc ./server -r -d docs",
     "start": "nodemon --ignore node_modules server",
     "test": "mocha --bail --reporter nyan test/ServerSpec.js; pkill -n node;",
-    "lint": "eslint ./"
+    "lint": "eslint ./",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install"
   },
   "dependencies": {
     "bluebird": "^3.3.4",
     "body-parser": "^1.15.0",
     "ejs": "^2.4.1",
-    "express": "^4.13.4",
+    "express": "^4.17.1",
     "express-partials": "^0.3.0",
     "lodash": "^4.17.4",
     "mysql": "^2.12.0",
@@ -27,8 +27,21 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git",
     "jsdoc": "^3.5.3",
-    "mocha": "^2.4.5"
-  }
+    "mocha": "^2.4.5",
+    "nodemon": "^2.0.4"
+  },
+  "main": ".eslintrc.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hackreactor/rbkgp1-shortly-express.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hackreactor/rbkgp1-shortly-express/issues"
+  },
+  "homepage": "https://github.com/hackreactor/rbkgp1-shortly-express#readme"
 }
